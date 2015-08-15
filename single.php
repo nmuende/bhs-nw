@@ -1,5 +1,7 @@
 <?php get_header(); ?>
-		<!--begin main-inside->
+		<!--begin main-inside-->
+		<div id="full-content">
+
 			<div id="page-content">
 	    		<h2><?php the_title(); ?></h2>     
 
@@ -12,11 +14,14 @@
 
 				<?php endwhile; endif; ?>  
 
-			</div><!--end content-->
-			<!--end main-->
+			</div><!--end page-content-->
+
+		</div><!--end full-content-->
+
 			<!--start sidebar-->
 			<?php choose_sidebar(); ?>
 			<!--end sidebar-->
+
 		</div><!--end main-inside-->	
 	</div><!--end main-outside-->	
 <?php get_footer(); ?>

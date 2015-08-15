@@ -1,2 +1,2 @@
-# bhs-nw
-Work on Templates for BHS site
+# wp-bhs
+Group Project 

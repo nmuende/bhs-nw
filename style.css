@@ -1,6 +1,6 @@
-/*  
+/*
 Theme Name: bhs-15
-Description: Theme for a small archive collection organization 
+Description: Theme for a small archive collection organization
 Version: 1.0
 Author(s): Patrick Daniels, Sunny Eun, Young Han, Christina Rome, Nicole Warnemuende
 License: GNU General Public License v2 or later
@@ -10,8 +10,9 @@ Text Domain: bhswa
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-/*resets*/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+
+/*  ------  BEGIN RESETS  -------------------------  */
 body, body * {
 	box-sizing: border-box;	/* declared width = rendered width */
 	margin: 0;
@@ -23,79 +24,55 @@ a img {
 a {
 	text-decoration: none;
 }
-/*end resets*/
-/*standard styles*/
+/*  ------  END RESETS  ---------------------------  */
+
+/*  ------  STANDARD STYLES  ----------------------  */
+small, .font_small {font-size: 0.889em;}
+
 html {
-	font-size: 16px;
+	font-size: 1em;
 	min-width: 600px;/*  ? what should this be?  */
+	-webkit-text-size-adjust: 100%;
 }
 body {
-	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, Sans-Serif;
-	/*font-size: 100%;*/
-	font-size: 1em;
-	line-height: 1.4;
+	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 100%;
+	line-height: 150%;
 }
 p {
-	/*font-size: 16px;*/
-	/*font-size: 1em;*/
+	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1em;
 	color: #494949;
-	font-size: .813em;
 	line-height: 1.66;
-	margin-bottom: 8px;
+	margin-bottom: 1.3em;
 }
-h1{
-	font-size: 2.25em;
-	/*font-size: 37.897px;*/
-	font-weight: 300;
-	line-height: 100%;
-	margin-bottom: 8px;
-}
-h2{
+h1, h2, h3, h4, h5, h6 {
 	color: #5B4131;
-	font-size: 1.375em;
-	/*font-size: 1.5em;
-	font-size: 28.43px;*/
-	line-height: 100%;
-	font-weight: bold;
-	margin-bottom: 8px;
-
-}
-h3{
-	font-size: 1.063em;
-	font-weight: bold;
-	/*font-size: 1.125em;
-	font-size: 21.328px;
-	font-weight: normal;*/
-	line-height: 100%;
-	margin-bottom: 8px;
-}
-h4{
-	font-size: 1.108em;
-/*	font-size: 17.728px;*/
-	font-weight: normal;
-	line-height: 100%;
-	margin-bottom: 8px;
+  	margin-bottom: 0.5em;
+  	font-weight: bold;
+  	line-height: 125% !important;
 }
 ul {
 	font-size: 1em;
 	line-height: 150%;
-	margin-bottom: 8px;
 }
 ul li {
 	list-style-type: disc;
-	margin-left: 2.7%;
+	margin-left: 1.25em;
+	color: #494949;
 	margin-bottom: 4px;
 }
 ol {
-	font-size: 1em;
+	margin-left:1.75em;
+	/*font-size: 1em;
 	line-height: 150%;
 	margin-left: 2.92%;
-	margin-bottom: 8px;
+	margin-bottom: 8px;*/
 }
 ol li {
-	font-size: 16px;/*should be the same size as p*/
-	margin-bottom: 4px;
-	margin-left: 28px;
+	margin-left:1.75em;
+	/*margin-bottom: 4px;
+	margin-left: 28px;*/
 }
 dl {
 	margin-left: 8px;
@@ -112,10 +89,10 @@ a{
 	text-decoration: none;
 }
 a:link {
-	color: black;
+	color: #494949;
 }
 a:visited {
-	color: black;
+	color: #494949;
 	text-decoration: none;
 }
 a:hover, a:focus {
@@ -123,23 +100,34 @@ a:hover, a:focus {
 a img, img {
 	border: none;
 	height: auto;
-	max-width: 100%;
+	max-width: 100%;/*required for responsive*/
 }
 blockquote {
 	font-style: italic;
 	margin: 30px;
 }
-strong {		
+strong {
 	font-weight: bolder;
 }
-/*end standard styles*/
+/*  ------  END STANDARD SELECTORS  ---------------  */
 
-/*header styles*/
+/*  ------  BEGIN SPECIFIC SELECTORS  -------------  */
+#outside {
+	background-color: #fff;
+	width: 100%;
+}
+
+/*  ------  BEGIN HEADER SELECTORS  --------------  */
+#outer-header {
+	background-color: #F9F9CF;
+	height: 150px;
+	max-width: 100%;
+}
 header {
 	background-color: #F9F9CF;
 	height: 150px;
-	margin-top: 2px;
-	max-width: 100%;
+	margin: 0 auto;
+	max-width: 980px;
 	position: relative;
 }
 #logo {
@@ -149,70 +137,91 @@ header {
 	position: absolute;
 	left: 10px;
 	top: 10px;
-}
-#logo a:hover {
+	z-index: 3;
 }
 #social {
 	float: right;
 	padding-top: 20px;
-	/*padding-right: 20px;*/
-	padding-right: 30px;
+	margin-right: 15px;
 }
-/*not sure what do do with this*/
 #header-right {
 	float: right;
 	height: 100%;
 }
 #header-img {
 	position: absolute;
-	right: 275px;
+	right: 28.06122%;
 	top: 11px;
 }
-#search {
+#header-search {
 	float: right;
 	margin-top: 100px;
 }
-#search input {
+#header-search input {
 	height: 30px;
-	max-width: 200px;
+	width: 150px;
 }
-.search-form label span {
+#header .search-form label span {
 	display: none;
 }
-.search-submit {
+#header .search-submit {
 	height: 30px;
-	max-width: 100px !important;	
+	width: 50px !important;
 }
-/*end header styles*/
+/*  ------  END HEADER SELECTORS  -----------------  */
 
-/*nav styles*/
+/*  ------  BEGIN NAV SELECTORS  ------------------  */
+#outer-nav {
+	background-color: #58581F;
+  	width: 100%;
+}
 #navigation {
 	background-color: #58581F;
-	clear: both;
-	height: 50px;
-  	max-width: 100%;
-	text-align: left;
+	font-family: 'Libre Baskerville', serif;
+	font-size: .95em;
+	margin: 0 auto;
+  	max-width: 980px;
+	padding-right: 15px;
+	text-align: right;
 }
 #navigation a.hover, #navigation a.focus, #navigation a.current_page {
 	background-color: #58581F;
 }
-#navigation ul{
-	list-style-image: none;
-	margin: 0;
-	padding-right: 10px;
+#navigation li a:hover, #navigation li a:focus{
+	text-decoration:none;
+	color:#d9a734;
+	text-shadow: .5px .5px .5px #684901;
+}
+#navigation > ul{
+		/*css menu styling*/
+		background-color: #58581F;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		-o-border-radius: 2px;
+		border-radius: 2px;
+	  	list-style-type: none;
+		margin: 0;
+		padding: 0;
+		width: auto;
+		/*css menu styling*/
 	text-align: right;
 }
-#navigation ul li{
-  	display: inline-block;
-  	*display: inline;
-	font-size: .95em;
+#navigation > ul li{
+		/*css menu styling*/
+	  	display: inline-block;
+	  	*display: inline;
+		zoom: 1;
+		/*css menu styling*/
+	/*neccesary for bhs styling*/
 	line-height: 50px;
 	list-style-type: none;
+	margin:0 !important;
 	text-align: right;
 	width: auto;
+	padding-left: 15px;
 }
-#navigation a {
-	color: white;
+#navigation a, #navigation a:visited {
+	color:#fff;
 	font-weight: bold;
 }
 #navigation li.current_page_item a {
@@ -221,112 +230,136 @@ header {
 	border-right: none;
 	padding-right: 0;
 }
-	/*css menu selectors*/
+
+/*  ------  BEGIN CSS MENU SELECTORS  -------------  */
+	#navigation > ul li#responsive-tab {
+		display: none;/*Hide for large screens*/
+	}
 	#navigation > ul li.right {
-		  float: right;
+		float: right;
 	}
 	#navigation > ul li.has-sub {
-	  position: relative;
+	 	position: relative;
+		z-index: 11;/*to display over content*/
 	}
 	#navigation > ul li.has-sub:hover ul {
-	  	display: block;
+		color:#d9a734;
+		display: block;
 	}
 	#navigation > ul li.has-sub ul {
 	  	background: #58581F;
-		 	border-top: 0 none;
+		border: 1px solid #ece6e8;
+  		border-bottom: 3px solid #d9ced2;
+  		border-top: 0 none;
 		display: none;
    		list-style-type: none;
- 		position: absolute;
   		margin: 0;
   		padding: 0;
-		text-align: left;
+ 		position: absolute;
+		text-align: right;
 		width: 160px;
 	}
 	#navigation > ul li.has-sub ul li {
 	  	display: block;
-		text-align: left;
+		text-align: left;/*to align it left instead of right for big nav*/
 	}
 	#navigation > ul li.has-sub > a {
+	  	background-image: url('../images/caret.png');
+	  	background-repeat: no-repeat;
+  		background-position: 90% -95%;
 	}
 	#navigation > ul li.has-sub > a.active,
 	#navigation > ul li.has-sub > a:hover {
-	  	background-position: -90% 195%; /*   what is this for? */
-	}
-	#navigation > ul li.active {
+	  	background: url('../images/caret.png') no-repeat;
+	  	background-position: 90% 195%; /*   what is this for? */
+		color:#d9a734;
 	}
 	#navigation > ul li a.active,
 	#navigation > ul li a:hover {
+		color:#d9a734;
+  		text-shadow: 0px 1px 0px #000;
+	}
+/*  ------  END CSS MENU SELECTORS  ---------------  */
 
-	}
 	#navigation > ul li a {
-		text-decoration: none;
+		text-decoration: none !important;
 	}
-	/*end css menu selectors*/
-/*end nav styles*/
-/*start header bar*/
+/*  ------  END NAV SELECTORS  --------------------  */
+/*  ------  END HEADER SELECTORS  -----------------  */
+
 #header-bar {
 	background-color: #828248;
-	height: 20px;
-	max-width: 980px;
-}
-/*end header image bar*/
-/*end header styles*/
-
-/*content styles*/
-#wrapper {
-	background-image: url("images/grid.png");
 	clear: both;
-	margin: 0 auto;
-	max-width: 980px;
+	height: 20px;
+	width: 100%;
 }
+#high-bar, #low-bar {
+	border-color: #fff;
+	clear: both;
+	height: 15px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/*  ------  BEGIN CONTENT SELECTORS  --------------  */
 #main-outside {
 	background-color: #828248;
 	clear: both;
-	float: left;
-	margin-top: 15px;
-	max-width: 980px;
+	overflow: hidden;
+	/* 70px sides padding-left:7.14285%;
+	padding-right:7.14285%;*/
+	padding-left: 6.12244%;
+	padding-right: 6.12244%;
+	margin: 0 auto;
+	max-width: 980px;/*leave as max*/
 }
 #main-inside {
 	background-color: rgba(255, 255, 255, 0.5);
 	clear: both;
 	float: left;
-	margin-bottom: 0;
-	margin-left: 3.06122%;
-	margin-right: 3.06122%;
-	margin-top: 0;
-	max-width: 93.87755%;
+	overflow: hidden;
+	font-family: 'Droid Sans', sans-serif;
+	padding:10px 10px 0px 10px;
+}
+#full-content {
+	float: left;
+	margin-top: 25px;
+	min-height: 400px;
+	/*70px width: 65.07857%;*/
+	width: 65.11627%;
+
 }
 #front-page-content {
-	clear: both;
-	margin-top: 25px;
-	max-width: 62.24489%;
-	padding-left: 2.04081%;
+	width: 100%;
+}
+#front-page-content a,
+#front-page-content a:visited,
+#page-content a,
+#page-content a:visited {
+	color: #5b4131 !important;
 }
 #page-content {
-	float: left;
-	margin-top: 25px;
-	max-width: 62.24489%;
-	padding-left: 2.04081%;
-}
-#front-page-content h2, #page-content h2 {
-	font-size: 1.375em;
-	color: #5b4131;
-	font-weight: bold;
-	margin: 20px 0 10px 0;
+	width: 100%;
 }
 
-#image-slider {
-	float: left;
-	margin-top: 25px;
-	max-width: 62.24489%;
-}
-#image-slider img {
-	max-height: 380px;
-	max-width: 100%;
-}
-/*end content styles*/
+/*  ------  BEGIN ATTACHMENT SELECTORS  -----------  */
+#attachment-content {
 
-/*accordion styles*/
+}
+/*  ------  END ATTACHMENT SELECTORS  -------------  */
+
+/*  ------  BEGIN GENERAL FLEXSLIDER SELECTORS  ---  */
+.flexslider {
+	float: left;
+	height: 380px;
+	width: 100%;
+}
+.flexslider li {
+	text-decoration: none !important;
+}
+/*  ------  END GENERAL FLEXSLIDER SELECTORS  -----  */
+
+/*  ------  BEGIN ACCORDION SELECTORS  ------------  */
 #accordion h4{
 	background-color: #ECE0C9;
 	border: 1px solid black;
@@ -339,36 +372,28 @@ header {
 	width: 97%;
 }
 .accordion-content {
-	border: 1px solid black;
+	border: 1px solid #494949;
 	margin: 0;
-	padding: 0;
+	padding: 0 5px;
 	width: 97%;
 }
-#accordion ul {
-	padding: 4px;
-}
-#accordion ul li{
+/*  ------  END ACCORDION SELECTORS  --------------  */
+/*  ------  END CONTENT SELECTORS  ----------------  */
 
-}
-
-/*end accordion styles*/
-
-/*sidebar panel styles*/
+/*  ------  BEGIN SIDEBAR SELECTORS  --------------  */
 aside {
 	float: right;
 	height: 100%;
 	margin-top: 25px;
-	max-width: 29.59183%;
+	/*70px width: 32.53928%;*/
+	width: 32.55813%;
 }
-/*primary sidebar styles*/
-#primary, #secondary, #impressions {
-}
-aside h3 { 
+aside h3 {
 	border-bottom: 3px solid #b7b47d;
-	color: #726244; 
-	font-size: 1.063em;
+	color: #726244;
+	font-size: 1.188em;
 	font-weight: bold;
-	line-height: 30px;
+	line-height: 1.188em;
 	margin-bottom: 15px;
 }
 aside ul li {
@@ -389,7 +414,7 @@ aside p {
 .widget {
 	float: left;
 	margin-bottom: 20px;
-	width: 90%
+	width: 100% !important;
 }
 .widget ul li {
 	list-style-type: none;
@@ -397,26 +422,15 @@ aside p {
 .widget-title {
 	font-style: bold;
 }
-/*end primary sidebar styles*/
+/*  ------  END SIDEBAR SELECTORS  ----------------  */
 
-.email {
-	height: 40px;
-	margin-bottom: 10px;
-	width: 66%;
-}
-.paypal {
-	border-radius: 25px;
-	border: 1px solid black;
-	font-size: 14pt;
-	height: 80px;
-}
-/*index styles*/
+/*  ------  BEGIN INDEX STYLES  ---------------------  */
 .index-post-latest {
 	border-bottom: 1px solid #DDDDDD;
 	clear: both;
 	float: left;
 	margin-bottom: 20px;
-	max-width: 75%;
+	width: 100%;
 }
 .index-latest-blog-title {
 	color: #555555;
@@ -429,110 +443,105 @@ aside p {
 	width: 16% ;
 }
 .excerpt {
-	padding-top: 12px;
+	clear: both;
 	font-size: 1em;
-	float: right;
-	max-width: 82%;
+	float: left;
+	padding-top: 12px;
+	width: 82%;
 }
-/*end index styles*/
+/*  ------  END INDEX STYLES  -----------------------  */
 
-/*footer styles*/
+/*  ------  BEGIN FOOTER STYLES  --------------------  */
+#outer-footer {
+	background-color: #F9F9CF;
+}
 footer {
 	background-color: #F9F9CF;
-	clear: both;
-	float: left;
+	color: #000;
 	font-size: 1em;
-	height: 160px;
-	margin: 15px 0 0 0;
-	/*max-width: 960px;*/
-	max-width: 100%;
+	margin: 0 auto;
+	padding:20px;
+	width: 980px;
+	overflow:hidden;
 }
 footer ul {
   	width: auto;
 }
-
 footer ul li {
-	color: #000;
 	display: block;
+	line-height: 1.5;
 	list-style-type: none;
 	float: left;
-	font-size: .750em;
-	width: auto;
+	font-size: 1em;
+	font-weight: bold;
+	width: 100%;
 }
 footer ul li a {
-	color: #000;
-	font-size: .875em;
+	font-family:"Droid Sans", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #494949;
+	font-size: 1em;
 	font-weight: bold;
 }
 footer a:hover, footer a:focus {
-	border-bottom: 1px solid #939393;
-}
-footer p a:hover, footer p a:focus {
-	border-bottom: none !important;
+	color: black;
 }
 #footer-left{
 	float: left;
-	padding-left: 3.06122%;
-	width: 30%;
+	font-size: .75em;
+	width: 35%;
 }
 #footer-middle-left {
 	float: left;
 	padding-right: 2%;
-	width: 20%;
+	margin-left: 5%;
+	width: 15%;
 }
 #footer-middle-left, #footer-middle-right {
-	border-left: 2px solid black;
-	height: 80%;
-	margin-top: 2%;
+	border-left: 2px solid #494949;
 }
 #footer-middle-left ul li, #footer-middle-right ul li {
 	display: block;
-	padding-left: 1%;
-	padding-right: 1%;
 }
 #footer-middle-right {
 	float: left;
-	width: 20%;
+	width: 15%;
 }
 #footer-right {
 	float: right;
-	padding-right: 3.06122%;
-	width: 30%;
+	width: 20%;
 }
 #footer-right img {
 	float: right;
-	height: 100px;
-	width: 100px;
 }
-/*end footer styles*/
-/*  ---------------  BEGIN WORDPRESS-GENERATED SELECTORS  ---------------  */		
-		
+/*  ------  END FOOTER STYLES  ----------------------  */
+
+/*  ------  BEGIN WORDPRESS-GENERATED SELECTORS  ----  */
 div.entry {
 	margin-bottom: 20px;
 }
 .wp-caption-text  {
 }
 .alignnone {
-	margin-bottom: 10px; 
+	margin-bottom: 10px;
 }
 .alignleft {	/* applies to floated images */
 	float: left;
-	margin: 0 10px 10px 0px ; 
+	margin: 0 10px 10px 0px ;
 }
 .alignright { 	/* applies to floated images */
 	float: right;
-	margin: 0 0px 10px 10px; 
+	margin: 0 0px 10px 10px;
 }
 .aligncenter {
-	display: block;	
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
-#previous_image a, 
+#previous_image a,
 #next_image a {
-	border-bottom: none; 
+	border-bottom: none;
 }
-.attachment-thumbnail, 
+.attachment-thumbnail,
 .size-thumbnail {
 	padding: 5px;
 }
@@ -547,12 +556,12 @@ div.entry {
 }
 #comments-box,
 #respond {
-	clear: both; 	/* clears floated prev/next nav on comments.php template */	
+	clear: both; 	/* clears floated prev/next nav on comments.php template */
 }
 #respond h3{
 	margin-left: 5px;
 }
-	
+
 /* COMMENTS */
 
 #comments-head {
@@ -562,7 +571,7 @@ div.entry {
 #comments-box ul {
 	list-style-type:none;
 	padding-left: 0;
-	margin-left: 0;	
+	margin-left: 0;
 }
 #comments-box ol li {
 	margin: 10px 0;
@@ -589,64 +598,98 @@ div.entry {
 	float: left;
 	margin: 0 10px 10px 0;
 }
-					
+
 /* POST ITEMS */
 .post-box {
 	border-bottom:1px solid #DDDDDD;
 	margin-bottom:30px;
 	padding-bottom:10px;
 }
-
 .postmetadata {
 	float: left;
 	font-style:italic;
 	width: 460px;
 }
-
 .sticky {
-	
-}
 
+}
 .bypostauthor {
-	
-}
 
+}
 .read-more {
-	font-style: italic;	
+	font-style: italic;
 }
-
 /* GALLERY ITEMS */
 .gallery {
 	margin: auto;
 }
-	
 .gallery-item {
 	float: left;
 	margin: 5px 3px 5px 0;
 	text-align: center;
 }
-	
-#content p.smallattachment a, 
+#content p.smallattachment a,
 #content dl.gallery-item a {
 	border-bottom: none;
 }
-	
 #gallery-box img {
 	height: 400px;
 	width: 780px;
 }
-	
 .gallery-caption {
 	margin-left: 0;
 }
-	
 #content p.wp-caption-text {
 	margin-top: 10px;
 	font-size: 12px;
 }
-		
-/*  ---------------  END WORDPRESS-GENERATED SELECTORS  ---------------  */		
-/* ----------------  BEGIN RESPONSIVE CSS -----------------------------  */
+/*  --------  END WORDPRESS-GENERATED SELECTORS  --  */
+
+/*  --------  BEGIN PLUGIN SELECTORS  -------------  */
+/*  --------  BEGIN COLLECTIONS TABLES ------------  */
+.ai1ec-day {
+	background-color:white;
+}
+.ai1ec-weekday {
+	background-color:#b7b47d;
+}
+.ai1ec-event {
+	background-color: #f9f9cf;
+}
+/*  --------  END COLLECTIONS TABLES --------------  */
+
+/*  --------  BEGIN CONTACT FORM 7 SELECTORS ------  */
+.first-name input, .last-name input {
+	height: 25px;
+	width: 40%;
+}
+aside input.wpcf7-email {
+	height: 30px;
+	padding: 4px;
+	width: 85%;
+}
+aside .wpcf7-submit {
+	background-color: #f2ad5f;
+	background: #f2ad5f; /* Old browsers */
+	background: -moz-linear-gradient(top, #f2ad5f 0%, #f2ad5f 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2ad5f), color-stop(100%,#f2ad5f)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f2ad5f 0%,#f2ad5f 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #f2ad5f 0%,#f2ad5f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2ad5f', endColorstr='#f2ad5f',GradientType=0 ); /* IE6-9 */	
+	border: 2px solid #bd8500;
+	border-radius: 2px;
+	color: #5b4131;
+	font-size: 1em;
+	font-weight: bold;
+	height: 30px;
+	padding: 4px;
+}
+/*  --------  END CONTACT FORM 7 SELECTORS --------  */
+/*  --------  END PLUGIN SELECTORS  ---------------  */
+
+/*  --------  BEG RESPONSIVE CSS ------------------  */
 @media screen and (min-width: 1200px) {
 	#navigation > ul li#responsive-tab {
 	 	 display: none;
@@ -664,6 +707,7 @@ div.entry {
 /* Mobile Screen Set to 600px or Below  */
 @media screen and (max-width: 600px) {
 	body {
+		font-size: 150%;
 		margin: 0;
 		padding: 0;
 		width: 600px;
@@ -672,96 +716,123 @@ div.entry {
 		max-width: 100%;
 		max-height: 100%;
 	}
-	#wrapper {
-		max-width: 100%;
-	}
-	#header {
-		max-width: 100%;
+	#logo {
+		height: 200px;
+		width: 200px;
 	}
 	#header-img {
 		display: none;
 	}
+	#high-bar, #low-bar {
+		display: none;
+	}
+/*  --------  BEGIN CSS MENU SELECTORS --------------  */
+	#navigation {
+		padding-right: 0px;
+	}
+	#navigation a, #navigation a:visited {
+		color:#58581F;
+		font-weight: bold;
+	}	
 	#navigation > ul {
-    	width: 100%;
-	  }
-	  #navigation > ul li#responsive-tab {
-	    background-color: #58581F;
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+	#navigation > ul li#responsive-tab {
+		background-color: #58581F;
 	    display: block;
-	  }
-	  #navigation > ul li#responsive-tab a {
-	    background: url('images/menu.png') no-repeat;
+	}
+	#navigation > ul li#responsive-tab a {
+	    background: url('../images/menu.png') no-repeat;
 	    background-position: 95% -35%;
-	  }
-	  #navigation > ul li#responsive-tab a:hover {
+	    color: #fff;
+	}
+	#navigation > ul li#responsive-tab a:hover {
 	    background-position: 95% 135%;
-	  }
-	  #navigation > ul li {
+	    color: ;
+	}
+	#navigation > ul li {
 	    display: none;
-	  }
-	  #navigation > ul li.right {
+	    padding-right: 5px;
+	}
+	#navigation > ul li.right {
 	    float: none;
-	  }
-	  #navigation > ul li.has-sub {
+	}
+	#navigation > ul li.has-sub {
 	    position: relative;
-	  }
-	  #navigation > ul li.has-sub ul {
-	    background: #ffffff;
+	}
+	#navigation > ul li.has-sub ul {
+    	background: #ffffff;
+    	border: 0 none;
 	    display: block;
 	    position: static;
 	    width: 100%;
-    	border: 0 none;
-	  }
-	  #navigation > ul li.has-sub ul li {
-	    display: block !important;
-	  }
-	  #navigation > ul li.has-sub ul li a span {
-	    display: block;
-	    padding-left: 24px;
-	  }
-	  #navigation > ul li.has-sub > a {
+	}
+	.sub-menu {
+	    display: none;
+	}
+	#navigation > ul li.has-sub > a {
 	    background-image: none;
-	  }
-
-	#image-slider, #image-slider img {
+	}
+	#navigation > ul li {
+		background-color: #fff;
+		width: 100%;
+	}
+	#navigation > ul li.has-sub ul li {
+  	}
+	#navigation > ul li.has-sub ul li a span {
+   		display: block;
+    	padding-right: 24px;
+  	}
+/*  --------  END CSS MENU SELECTORS ----------------  */
+	.flexslider, .flexslider img {
 		margin-left: 0;
-		max-width: 100%;
+		width: 100%;
+	}
+	#main-outside {
+		padding-left: 0;
+		padding-right: 0;
 	}
 	#main {
 		margin-top: 25px;
-		max-width: 100%;
+		width: 100%;
 	}
-	#content {
-		margin-left: 2.08%;
-		max-width: 98%;
+	#full-content {
+		width: 100%;
 	}
 	aside {
 		clear: both;
 		float: left;
-		padding-left: 2.08%;
-		padding-right: 1.04%;
-		max-width: 100%
+		/*padding-left: 2.08%;
+		padding-right: 1.04%;*/
+		width: 100%
 	}
 	aside ul li {
 		list-style-type: none;
-		margin-left: 2.08%;
 		padding-bottom: 10px;
 	}
   	footer {
-  		max-width: 100%;
+  		width: 100%;
   	}
   	footer ul li {
   		display: block;
-  		width: 95%;
   	}
+}
+@media screen and (max-width: 400px) {
+	body {
+		font-size: 175%;
+	}
 }
 /* Make sure they show even if hidden in mobile view by JS */
 @media (min-width: 600px) {
   #navigation > ul > li.collapsed {
     display: inline-block !important;
     *display: inline;
+    zoom: 1;
   }
   #navigation > ul ul li.collapsed {
     display: block !important;
   }
 }
-/* ----------------  END RESPONSIVE CSS -------------------------------  */
+/*  --------  END RESPONSIVE CSS --------------------  */
